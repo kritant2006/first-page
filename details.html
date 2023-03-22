@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Details</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Registration Details</h1>
+	<p>Thank you for registering! Here are the details you entered:</p>
+	<ul><div class="container">
+		<li><strong>First Name:</strong> <span id="firstname"></span></li>
+		<li><strong>Last Name:</strong> <span id="lastname"></span></li>
+		<li><strong>Phone:</strong> <span id="phone"></span></li>
+		<li><strong>Course:</strong> <span id="course"></span></li>
+		<li><strong>Email:</strong> <span id="email"></span></li>
+		<li><strong>Password:</strong> <span id="password"></span></li>
+	</ul>
+	
+	<button onclick="goBack()" class="button">Back</button>
+</div>
+	
+	<script>
+		// Get the form data from the URL parameters
+		const urlParams = new URLSearchParams(window.location.search);
+
+		// Get the values of the form fields and insert them into the page
+		document.getElementById("firstname").innerHTML = urlParams.get("firstname");
+		document.getElementById("lastname").innerHTML = urlParams.get("lastname");
+		document.getElementById("phone").innerHTML = urlParams.get("phone");
+		document.getElementById("course").innerHTML = urlParams.get("course");
+		document.getElementById("email").innerHTML = urlParams.get("email");
+		document.getElementById("password").innerHTML = urlParams.get("password");
+		function goBack() {
+			window.history.back();
+		}
+	</script>
+</body>
+</html>
